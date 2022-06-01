@@ -18,7 +18,7 @@ from decouple import config
 
 import django.core.management.commands.runserver as runserver
 
-runserver.Command.default_port = config('WebServer_Port', default = "8089")
+runserver.Command.default_port = config('WebServer_Port', default = "8000")
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 

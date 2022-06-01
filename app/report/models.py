@@ -19,5 +19,7 @@ class Report(models.Model):
     user_id=models.CharField(_('user_id'),max_length=255,blank=True,null=True)
     report_id=models.CharField(_('report_id'),max_length=255,blank=True,null=True)
     is_respo=models.CharField(_('is_respo'),max_length=255,blank=True,null=True)
+    is_viewed=models.CharField(_('is_viewed'),max_length=255,blank=True,null=True)
+    is_replied=models.CharField(_('is_replied'),max_length=255,blank=True,null=True)
     class Meta:
         ordering = ["-id"]
