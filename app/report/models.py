@@ -21,5 +21,8 @@ class Report(models.Model):
     is_respo=models.CharField(_('is_respo'),max_length=255,blank=True,null=True)
     is_viewed=models.CharField(_('is_viewed'),max_length=255,blank=True,null=True)
     is_replied=models.CharField(_('is_replied'),max_length=255,blank=True,null=True)
+    email=models.CharField(_('email'),max_length=255,blank=True,null=True)
+    date=models.CharField(_('date'),max_length=255,blank=True,null=True)
+    title=models.CharField(_('title'),max_length=255,blank=True,null=True)
     class Meta:
         ordering = ["-id"]
