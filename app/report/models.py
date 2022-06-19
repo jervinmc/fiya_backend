@@ -24,5 +24,6 @@ class Report(models.Model):
     email=models.CharField(_('email'),max_length=255,blank=True,null=True)
     date=models.CharField(_('date'),max_length=255,blank=True,null=True)
     title=models.CharField(_('title'),max_length=255,blank=True,null=True)
+    category=models.CharField(_('category'),max_length=255,blank=True,null=True)
     class Meta:
         ordering = ["-id"]
