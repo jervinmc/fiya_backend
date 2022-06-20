@@ -10,7 +10,16 @@ class UserView(viewsets.ModelViewSet):
     search_fields = ['category','price','name','descriptions']
     queryset=User.objects.all()
     serializer_class=UserSerializer
-
+    def create(self,request):
+        res = request.data
+        item = User.objects.filter(email=res.get('email')).count()
+        if(item!=0):
+            return Response(status=status.HTTP_404_NOT_FOUND)
+        else:
+            item = UserSerializer(data=res)
+            item.is_valid(raise_exception=True)
+            item.save()
+            return Response(status=status.HTTP_201_CREATED)
 
 
 class Login(generics.GenericAPIView):
