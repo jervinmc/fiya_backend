@@ -26,5 +26,6 @@ class Report(models.Model):
     title=models.CharField(_('title'),max_length=255,blank=True,null=True)
     account_type=models.CharField(_('account_type'),max_length=255,blank=True,null=True)
     category=models.CharField(_('category'),max_length=255,blank=True,null=True)
+    updated_by=models.CharField(_('updated_by'),max_length=255,blank=True,null=True)
     class Meta:
         ordering = ["-id"]
