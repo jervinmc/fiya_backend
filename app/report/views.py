@@ -16,8 +16,9 @@ class ReportView(viewsets.ModelViewSet):
         serializers =  ReportSerializer(items,many=True)
         listitem=[]
         for x in serializers.data:
-            listitem.append({"date":x['date'],"id":x['id'],"account_type":'Client',"category":x['category'],"message":x['message'],"updated_by":x['updated_by'],"title":x['title']})
+            listitem.append({"date":x['date'],"id":x['id'],"email":x['email'],"user_id":x['user_id'],"account_type":'Client',"category":x['category'],"title":x['title'],"message":x['message'],"is_viewed":x['is_viewed'],"is_replied":x['is_replied'],"updated_by":x['updated_by']})
         print('okay')
+        
         return Response(status=status.HTTP_200_OK,data=listitem)
 
 
