@@ -14,8 +14,11 @@ class ReportView(viewsets.ModelViewSet):
     def list(self,request):
         items = Report.objects.filter(is_respo='no')
         serializers =  ReportSerializer(items,many=True)
+        listitem=[]
+        for x in serializers.data:
+            listitem.append({"message":x['message'],"report_id":x['report_id'],"id":x['id'],"email":x['email'],"date":x['date'],"title":x['title'],"account_type":x['account_type'],"category":x['category'],"updated_by":x['updated_by']})
         print('okay')
-        return Response(status=status.HTTP_200_OK,data=serializers.data)
+        return Response(status=status.HTTP_200_OK,data=listitem)
 
 
 class ReportList(generics.GenericAPIView):
